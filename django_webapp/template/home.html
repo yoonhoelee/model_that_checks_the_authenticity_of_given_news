@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Fake News Detector</title>
+<style>
+body{
+    background-image: url("https://images.theconversation.com/files/263351/original/file-20190312-86696-qqd56h.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip"); background-size: 100%;
+}
+</style>
+
+</head>
+<body>
+    <h2 align="center">
+        <font face="Lato" color="#2d3436" size="8">Identify if a given news is fake or not</font>
+    </h2>
+    
+
+    <br>
+    <form align="center" method="post" enctype="multipart/form-data" action='detect'>
+{% csrf_token %}
+<div class='col-md-4 col-sm-4'><label for="fname">Input URL:</label></div><input name="url" type="text" value="input url"> <br><br>
+<br>
+<input type="submit" value="Submit"></div>
+
+</form>
+<br>
+{% if tof %}
+<h1 align="center">{{tof}} news!</h1>
+{% endif %}
+<br>
+{% if author %}
+<h2 align="center">The author(s) of the article is/are {{author}}</h2>
+{% endif %}
+<br>
+{% if summary %}
+<h3 align="center">The summary of the article is {{summary}}</h3>
+{% endif %}
+<br>
+<h4 align="center">
+    <font face="Lato" color="#c0392b" size="4">Accuracy of the model was 99% in validation set</font>
+</h4>
+</body>
+</html>
