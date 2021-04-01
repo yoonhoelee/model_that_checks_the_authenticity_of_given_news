@@ -39,9 +39,7 @@ The documentation to this issue can be found in the link below
 
 ## Limitations
 
-The models were trained on a single GPU environments.
-Consequently, the models are trained on a limited amount of data and epochs.
-The accuracy of the BTS model is especially low as BTS tends to mix Korean and English in their songs.
+The model can only distinguish English songs as it was only trained on English data.
 
 
 ## Data From
