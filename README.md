@@ -13,6 +13,7 @@ For more on this click the link below.
 With the widespread use of social media, so did the spread of fake news.
 According to researchers from the Massachusetts Institute of Technology, fake news is more likely to be spread than their true counterpart.
 We believed that a pre-trained model that can distinguish real news from fake news can assist people verify what is real and what is fake.
+The application can now also analyze the sentiment of the article into "Positive", "Negative", and "Neutral" articles, based on the sentiment analysis fuction of the textblob library.
 
 *   [BBC-Fake news 'travels faster', study finds](https://www.bbc.com/news/technology-43344256)
 
@@ -23,7 +24,7 @@ We believed that a pre-trained model that can distinguish real news from fake ne
 *   scikit-learn (0.24.1)
 *   Django (3.1.7)
 *   Python (3.8.5)
-
+*   Textblob(0.15.3)
 
 ## Deployment
 
@@ -34,7 +35,7 @@ The documentation to this issue can be found in the link below
 
 *   [Using NLTK Data with Heroku Python](https://devcenter.heroku.com/articles/python-nltk)
 
-*   [Web-app deployed on Heroku](https://check-if-news-is-fake.herokuapp.com/)
+*   [Web-app deployed on Heroku](https://news-sentiment-and-authenticit.herokuapp.com/)
 
 
 ## Limitations

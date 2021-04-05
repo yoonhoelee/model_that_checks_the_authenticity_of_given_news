@@ -10,6 +10,7 @@ from newspaper import Article
 import nltk
 from nltk.corpus import stopwords
 import pickle
+from textblob import TextBlob
 
 
 stop_words = stopwords.words('english')
@@ -37,13 +38,22 @@ def detect(request):
             if token not in gensim.parsing.preprocessing.STOPWORDS and len(token) > 2 and token not in stop_words:
                 result.append(token)
         text_join = [" ".join(result)]
+    sentiment_string = ''.join(text_join)
+    blob = TextBlob(sentiment_string)
+    sent = blob.sentiment.polarity
+    if sent > 0.7:
+        polar = 'Positive'
+    elif 0.3 < sent < 0.7:
+        polar = 'Neutral'
+    else:
+        polar = 'Negative'
     new_vec = vec_train.transform(text_join)
     prediction = rfmodel.predict(new_vec)[0]
-    if prediction>=0.5:
+    if prediction >= 0.5:
         tof = 'Real'
     else:
         tof = 'Fake'
 
-    context = {'tof':tof, 'author':author, 'summary': summary}
+    context = {'tof':tof, 'author':author, 'summary': summary, 'polar':polar}
 
     return render(request, 'home.html', context)

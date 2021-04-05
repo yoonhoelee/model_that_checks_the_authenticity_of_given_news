@@ -32,12 +32,16 @@ body{
 <h2 align="center">The author(s) of the article is/are {{author}}</h2>
 {% endif %}
 <br>
-{% if summary %}
-<h3 align="center">The summary of the article is {{summary}}</h3>
+{% if polar %}
+<h3 align="center">This is a {{polar}} article</h3>
 {% endif %}
 <br>
-<h4 align="center">
+{% if summary %}
+<h4 align="center">The summary of the article is {{summary}}</h4>
+{% endif %}
+<br>
+<h5 align="center">
     <font face="Lato" color="#c0392b" size="4">Accuracy of the model was 99% in validation set</font>
-</h4>
+</h5>
 </body>
 </html>
