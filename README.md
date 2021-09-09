@@ -40,7 +40,7 @@ The documentation to this issue can be found in the link below
 
 ## Limitations
 
-The model can only distinguish English songs as it was only trained on English data.
+The model can only distinguish English news as it was only trained on English data.
 
 
 ## Data From
